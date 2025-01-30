@@ -28,7 +28,4 @@ print(generate_haiku())
 
 def roll_dice(sides=6):
     return random.randint(1, sides)
-
-print(generate_haiku())
-print(generate_random_quote())
 print(f"Dado: {roll_dice()}")
