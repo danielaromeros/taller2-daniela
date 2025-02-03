@@ -29,3 +29,27 @@ print(generate_haiku())
 def roll_dice(sides=6):
     return random.randint(1, sides)
 print(f"Dado: {roll_dice()}")
+
+
+print("\n\U0001F3B2 Bienvenido al juego de Adivina el Número! \U0001F3B2")
+print("Estoy pensando en un número entre 1 y 100...")
+
+# Elige un número aleatorio entre 1 y 100
+numero_secreto = random.randint(1, 100)
+intentos = 0
+
+while True:
+    try:
+        # Pide al usuario que ingrese un número
+        adivinanza = int(input("\n¡Adivina el número!: "))
+        intentos += 1
+
+        if adivinanza < numero_secreto:
+            print("Demasiado bajo. 🔻 Intenta de nuevo.")
+        elif adivinanza > numero_secreto:
+            print("Demasiado alto. 🔺 Intenta de nuevo.")
+        else:
+            print(f"\n✨ ¡Felicitaciones! Adivinaste el número {numero_secreto} en {intentos} intentos. 🎉")
+            break
+    except ValueError:
+        print("Por favor, ingresa un número válido. 😅")
